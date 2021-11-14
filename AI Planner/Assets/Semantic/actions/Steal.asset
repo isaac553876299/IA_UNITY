@@ -45,7 +45,8 @@ MonoBehaviour:
       m_Enum: {fileID: 0}
       m_Value: true
   m_CreatedObjects: []
-  m_RemovedObjects: []
+  m_RemovedObjects:
+  - Treasure
   m_ObjectModifiers:
   - m_Operator: =
     m_CustomOperatorType: 

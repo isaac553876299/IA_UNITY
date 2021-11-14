@@ -5,24 +5,27 @@ using Generated.Semantic.Traits;
 
 public class PlannerCallbacks : MonoBehaviour
 {
+    public GameObject cop;
+    public GameObject treasure;
+
     public Moves moves;
     public UnityEngine.AI.NavMeshAgent agent;
     public Robber trt;
 
-    public void Steal(GameObject treasure)
+    public void Steal()
     {
         Debug.Log("Steal");
         treasure.GetComponent<Renderer>().enabled = false;
     }
 
-    public IEnumerator Seek(GameObject treasure, GameObject copGO)
+    public IEnumerator Seek()
     {
         Debug.Log("Approach");
         agent.SetDestination(treasure.transform.position);
         while ((Vector3.Distance(treasure.transform.position, transform.position) > 2f) &&
-               (Vector3.Distance(treasure.transform.position, copGO.transform.position) > 10f))
+               (Vector3.Distance(treasure.transform.position, cop.transform.position) > 10f))
             yield return null;
-        if (Vector3.Distance(treasure.transform.position, copGO.transform.position) < 10f)
+        if (Vector3.Distance(treasure.transform.position, cop.transform.position) < 10f)
         {
             trt.CopAway = false;
         }
@@ -32,7 +35,7 @@ public class PlannerCallbacks : MonoBehaviour
         }
     }
 
-    public IEnumerator Wander(GameObject cop, GameObject treasure)
+    public IEnumerator Wander()
     {
         Debug.Log("Wander");
         while (Vector3.Distance(treasure.transform.position, cop.transform.position) < 10f)

@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4770208387494730, guid: ba2b67dbc790eb74f8a401c592dd619f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.97323996
+      value: -1.81
       objectReference: {fileID: 0}
     - target: {fileID: 4770208387494730, guid: ba2b67dbc790eb74f8a401c592dd619f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4770208387494730, guid: ba2b67dbc790eb74f8a401c592dd619f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1962097
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 4770208387494730, guid: ba2b67dbc790eb74f8a401c592dd619f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936136730399340, guid: 10dcade9ef34ab642846c4b889ac76e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.127525
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 4936136730399340, guid: 10dcade9ef34ab642846c4b889ac76e7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6631964419132099031, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.64
+      value: -1.03
       objectReference: {fileID: 0}
     - target: {fileID: 6631964419132099031, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
       propertyPath: m_LocalPosition.y
@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6631964419132099031, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.43
+      value: -8.04
       objectReference: {fileID: 0}
     - target: {fileID: 6631964419132099031, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
       propertyPath: m_LocalRotation.w
@@ -912,7 +912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4848072486756740, guid: f16d978b3d1fa984d82c01d30a1fb40a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6
+      value: 1.64
       objectReference: {fileID: 0}
     - target: {fileID: 4848072486756740, guid: f16d978b3d1fa984d82c01d30a1fb40a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -920,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4848072486756740, guid: f16d978b3d1fa984d82c01d30a1fb40a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.872
+      value: -3.19
       objectReference: {fileID: 0}
     - target: {fileID: 4848072486756740, guid: f16d978b3d1fa984d82c01d30a1fb40a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -974,7 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7423567203501390115, guid: b79d0b13355dc8f44b7956db61a82656, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.54
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 7423567203501390115, guid: b79d0b13355dc8f44b7956db61a82656, type: 3}
       propertyPath: m_LocalPosition.y
@@ -982,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7423567203501390115, guid: b79d0b13355dc8f44b7956db61a82656, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.95
+      value: 12.49
       objectReference: {fileID: 0}
     - target: {fileID: 7423567203501390115, guid: b79d0b13355dc8f44b7956db61a82656, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1258,6 +1258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361409f75bf1b2449a13f31333928d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cop: {fileID: 859428156}
+  treasure: {fileID: 382256887}
   moves: {fileID: 1867897470}
   agent: {fileID: 1867897471}
   trt: {fileID: 1867897475}
@@ -1330,44 +1332,19 @@ MonoBehaviour:
     m_Method: Wander
     m_SourceGameObject: {fileID: 1867897468}
     m_Source: {fileID: 1867897472}
-    m_Arguments:
-    - m_Parameter: Cop
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
-      m_Enum: {fileID: 0}
-      m_Value: 
-    - m_Parameter: Treasure
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
-      m_Enum: {fileID: 0}
-      m_Value: 
+    m_Arguments: []
   - m_ActionName: Approach
     m_PlanExecutorStateUpdateMode: 1
     m_Method: Seek
     m_SourceGameObject: {fileID: 1867897468}
     m_Source: {fileID: 1867897472}
-    m_Arguments:
-    - m_Parameter: Treasure
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
-      m_Enum: {fileID: 0}
-      m_Value: 
-    - m_Parameter: Cop
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
-      m_Enum: {fileID: 0}
-      m_Value: 
+    m_Arguments: []
   - m_ActionName: Steal
     m_PlanExecutorStateUpdateMode: 0
     m_Method: Steal
     m_SourceGameObject: {fileID: 1867897468}
     m_Source: {fileID: 1867897472}
-    m_Arguments:
-    - m_Parameter: Treasure
-      m_Trait: {fileID: 0}
-      m_TraitPropertyId: -1
-      m_Enum: {fileID: 0}
-      m_Value: 
+    m_Arguments: []
   m_AutoUpdate: 1
 --- !u!114 &1867897475
 MonoBehaviour:

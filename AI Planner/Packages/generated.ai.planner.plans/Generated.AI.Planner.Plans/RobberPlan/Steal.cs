@@ -134,6 +134,7 @@ namespace Generated.AI.Planner.Plans.RobberPlan
             }
 
             
+            newState.RemoveTraitBasedObjectAtIndex(action[k_TreasureIndex]);
 
             var reward = Reward(originalState, action, newState);
             var StateTransitionInfo = new StateTransitionInfo { Probability = 1f, TransitionUtilityValue = reward };
