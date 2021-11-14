@@ -1081,9 +1081,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1867897468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bd25bafa3be44f4bbb9a1fd2fc213bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 361409f75bf1b2449a13f31333928d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moves: {fileID: 1867897470}
+  agent: {fileID: 1867897471}
+  trt: {fileID: 1867897475}
 --- !u!114 &1867897473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,7 +1168,7 @@ MonoBehaviour:
       m_Enum: {fileID: 0}
       m_Value: 
   - m_ActionName: Approach
-    m_PlanExecutorStateUpdateMode: 0
+    m_PlanExecutorStateUpdateMode: 1
     m_Method: Seek
     m_SourceGameObject: {fileID: 1867897468}
     m_Source: {fileID: 1867897472}
