@@ -8,7 +8,7 @@ namespace BBCore.Conditions
     public class Ready2Shoot : ConditionBase
     {
         [InParam("force")]
-        public int f;
+        public float f;
         [InParam("transform")]
         public Transform ft;
         [InParam("target")]
@@ -16,8 +16,7 @@ namespace BBCore.Conditions
 
         public override bool Check()
         {
-            return true;
-            float maxDist = f * Mathf.Cos(0.79f);
+            float maxDist = 30 * Mathf.Cos(0.79f);
             return (maxDist > Vector3.Distance(ft.position, t.position));
         }
     }

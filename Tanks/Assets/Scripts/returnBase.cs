@@ -11,6 +11,8 @@ namespace BBUnity.Actions
 
         [InParam("tankBase")]
         public Vector3 tankBase;
+        [InParam("mag")]
+        public int mag;
 
         public override void OnStart()
         {
@@ -34,7 +36,7 @@ namespace BBUnity.Actions
         {
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
-
+                mag = 3;
 
                 return TaskStatus.COMPLETED;
             }

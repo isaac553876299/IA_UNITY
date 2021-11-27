@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -61,6 +61,7 @@
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\ClosestGameObjectWithTag.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\GetComponent.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Navigation\MoveToRandomPosition.cs" />
+    <Compile Include="Assets\Scripts\emptyMag.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\Destroy.cs" />
     <Compile Include="Assets\Scripts\returnBase.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Basic\CheckMouseButton.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Scripts\wander.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Basic\CheckBool.cs" />
     <Compile Include="Assets\BehaviorBricks\Samples\ProgrammersQuickStartGuide\Done\DoneSleepForever.cs" />
+    <Compile Include="Assets\Scripts\ready2shoot.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\SetVelocity.cs" />
     <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\ApplyForce.cs" />
@@ -118,8 +120,6 @@
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\LookAt.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetBool.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Perception\IsTargetClose.cs" />
-    <Compile Include="Assets\Scripts\emptyMag.cs" />
-    <Compile Include="Assets\Scripts\ready2shoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Bowlby_One\FontLicense.txt" />

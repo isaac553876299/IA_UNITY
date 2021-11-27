@@ -22,6 +22,8 @@ namespace BBUnity.Actions
         public float m_LaunchForce;
         [InParam("mag")]
         public int shells;
+        [OutParam("mago")]
+        public int shellso;
 
         public override void OnStart()
         {
@@ -57,6 +59,7 @@ namespace BBUnity.Actions
             m_ShootingAudio.Play();
 
             --shells;
+            shellso = shells;
         }
     }
 }
