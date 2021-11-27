@@ -1,47 +1,67 @@
-using System.Collections;
-using System.Collections.Generic;
+using Pada1.BBCore.Tasks;
+using Pada1.BBCore;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class wander : MonoBehaviour
+namespace BBUnity.Actions
 {
-    private NavMeshAgent agent;
-    private Transform target;
-
-    // Start is called before the first frame update
-    void Start()
+    [Action("Actions/Wander")]
+    public class Wander : GOAction
     {
-        agent = gameObject.GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("redTank").transform;
-    }
+        private UnityEngine.AI.NavMeshAgent navAgent;
 
-    // Update is called once per frame
-    void Update()
-    {
-        Wander();
-    }
+        public override void OnStart()
+        {
+            navAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+            if (navAgent == null)
+            {
+                Debug.LogWarning("The " + gameObject.name + " game object does not have a Nav Mesh Agent component to navigate. One with default values has been added", gameObject);
+                navAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
+            }
+            //navAgent.SetDestination(target);
 
-    Vector3 wanderTarget = Vector3.zero;
-    public void Wander()
-    {
-        float wanderRadius = 10;
-        float wanderDistance = 10;
-        float wanderJitter = 1;
+#if UNITY_5_6_OR_NEWER
+                navAgent.isStopped = false;
+#else
+            navAgent.Resume();
+#endif
+        }
 
-        wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
-                                        0,
-                                        Random.Range(-1.0f, 1.0f) * wanderJitter);
-        wanderTarget.Normalize();
-        wanderTarget *= wanderRadius;
+        /// <summary>Method of Update of MoveToPosition </summary>
+        /// <remarks>Check the status of the task, if it has traveled the road or is close to the goal it is completed
+        /// and otherwise it will remain in operation.</remarks>
+        Vector3 wanderTarget = Vector3.zero;
+        public override TaskStatus OnUpdate()
+        {
+            float wanderRadius = 10;
+            float wanderDistance = 10;
+            float wanderJitter = 1;
 
-        Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
-        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
+            wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
+                                            0,
+                                            Random.Range(-1.0f, 1.0f) * wanderJitter);
+            wanderTarget.Normalize();
+            wanderTarget *= wanderRadius;
 
-       
-         
+            Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
+            Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
 
-        
+            navAgent.SetDestination(targetWorld); //Seek();
 
-        agent.SetDestination(targetWorld);
+            if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+                return TaskStatus.COMPLETED;
+
+            return TaskStatus.RUNNING;
+        }
+
+        public override void OnAbort()
+        {
+#if UNITY_5_6_OR_NEWER
+            if(navAgent!=null)
+                navAgent.isStopped = true;
+#else
+            if (navAgent != null)
+                navAgent.Stop();
+#endif
+        }
     }
 }
