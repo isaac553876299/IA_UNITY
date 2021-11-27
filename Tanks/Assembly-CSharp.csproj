@@ -62,7 +62,6 @@
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\GetComponent.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Navigation\MoveToRandomPosition.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\Destroy.cs" />
-    <Compile Include="Assets\Scripts\returnBase.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Basic\CheckMouseButton.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Physics\FromMouseToWorld.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\SendMessage.cs" />
@@ -118,10 +117,7 @@
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\LookAt.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetBool.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Perception\IsTargetClose.cs" />
-    <Compile Include="Assets\Scripts\reloadShells.cs" />
-    <Compile Include="Assets\Beh\Wander.cs" />
-    <Compile Include="Assets\Beh\Fire.cs" />
-    <Compile Include="Assets\Beh\CheckEnemyInRange.cs" />
+    <Compile Include="Assets\Scripts\returnBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Bowlby_One\FontLicense.txt" />

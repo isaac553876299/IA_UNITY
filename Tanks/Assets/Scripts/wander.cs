@@ -21,23 +21,20 @@ public class wander : MonoBehaviour
         Wander();
     }
 
-    Vector3 wanderTarget = Vector3.zero;
-    public void Wander()
+    void Wander()
     {
-        float wanderRadius = 10;
-        float wanderDistance = 10;
-        float wanderJitter = 1;
+        float radius = 10f;
+        float offset = 3f;
 
-        wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
-                                        0,
-                                        Random.Range(-1.0f, 1.0f) * wanderJitter);
-        wanderTarget.Normalize();
-        wanderTarget *= wanderRadius;
+        Vector3 localTarget = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
+        localTarget.Normalize();
+        localTarget *= radius;
+        localTarget += new Vector3(0, 0, offset);
 
-        Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
-        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
+        Vector3 worldTarget = agent.transform.TransformPoint(localTarget);
+        worldTarget.y = 0f;
 
-        agent.SetDestination(targetWorld); //Seek();
+        agent.destination = worldTarget;
     }
 
 }
