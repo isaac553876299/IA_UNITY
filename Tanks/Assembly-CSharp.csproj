@@ -120,6 +120,7 @@
     <Compile Include="Assets\BehaviorBricks\Actions\System\GameObject\LookAt.cs" />
     <Compile Include="Assets\BehaviorBricks\Actions\System\Basic\SetBool.cs" />
     <Compile Include="Assets\BehaviorBricks\Conditions\System\Perception\IsTargetClose.cs" />
+    <Compile Include="Assets\Scripts\mag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Bowlby_One\FontLicense.txt" />

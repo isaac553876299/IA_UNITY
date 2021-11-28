@@ -34,7 +34,7 @@ namespace BBUnity.Actions
         {
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
-
+                GameObject.FindWithTag("redTank").GetComponent<mag>().reload();
 
                 return TaskStatus.COMPLETED;
             }

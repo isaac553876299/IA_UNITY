@@ -7,11 +7,9 @@ namespace BBCore.Conditions
     [Condition("Basic/EmptyMag")]
     public class EmptyMag : ConditionBase
     {
-
-
         public override bool Check()
         {
-            return false;
+            return (GameObject.FindWithTag("redTank").GetComponent<mag>().shells == 0);
         }
     }
 }

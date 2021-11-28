@@ -28,7 +28,6 @@ namespace BBUnity.Actions
 
         public override TaskStatus OnUpdate()
         {
-            Debug.Log("fire!");
             Fire();
             return TaskStatus.COMPLETED;
         }
@@ -45,15 +44,14 @@ namespace BBUnity.Actions
             float x = target.position.x;
             float y = target.position.y;
             float angle = Mathf.Atan(Mathf.Pow(v, 2) + Mathf.Sqrt(Mathf.Pow(v, 4) - g * (g * Mathf.Pow(x, 2) + 2 * y * Mathf.Pow(v, 2))) / (g * x));
-            Debug.Log(angle);
 
             GameObject bullet = GameObject.Instantiate(prefab, m_FireTransform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().velocity = m_LaunchForce * m_FireTransform.forward;
 
-            m_ShootingAudio.clip = m_FireClip;
-            m_ShootingAudio.Play();
+            //m_ShootingAudio.clip = m_FireClip;
+            //m_ShootingAudio.Play();
 
-
+            GameObject.FindWithTag("redTank").GetComponent<mag>().use();
         }
     }
 }
