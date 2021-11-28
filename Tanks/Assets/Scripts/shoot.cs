@@ -20,21 +20,16 @@ namespace BBUnity.Actions
 
         [InParam("force")]
         public float m_LaunchForce;
-        [InParam("mag")]
-        public int shells;
-        [OutParam("mago")]
-        public int shellso;
 
         public override void OnStart()
         {
-            Debug.Log("fire!");
-            Fire();
+
         }
 
         public override TaskStatus OnUpdate()
         {
-            //Fire();
-            //return TaskStatus.RUNNING;
+            Debug.Log("fire!");
+            Fire();
             return TaskStatus.COMPLETED;
         }
 
@@ -52,14 +47,13 @@ namespace BBUnity.Actions
             float angle = Mathf.Atan(Mathf.Pow(v, 2) + Mathf.Sqrt(Mathf.Pow(v, 4) - g * (g * Mathf.Pow(x, 2) + 2 * y * Mathf.Pow(v, 2))) / (g * x));
             Debug.Log(angle);
 
-            GameObject.Instantiate(prefab, m_FireTransform.position, Quaternion.identity);
-            prefab.GetComponent<Rigidbody>().velocity = m_LaunchForce * m_FireTransform.forward;
+            GameObject bullet = GameObject.Instantiate(prefab, m_FireTransform.position, Quaternion.identity) as GameObject;
+            bullet.GetComponent<Rigidbody>().velocity = m_LaunchForce * m_FireTransform.forward;
 
             m_ShootingAudio.clip = m_FireClip;
             m_ShootingAudio.Play();
 
-            --shells;
-            shellso = shells;
+
         }
     }
 }
