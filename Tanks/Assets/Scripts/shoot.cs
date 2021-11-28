@@ -16,8 +16,10 @@ namespace BBUnity.Actions
         [InParam("tag")]
         public string tankTag;
 
+        [InParam("m_ShootingAudio")]
         public AudioSource m_ShootingAudio;
-        public AudioClip m_ChargingClip;
+
+        [InParam("m_FireClip")]
         public AudioClip m_FireClip;
 
         [InParam("force")]
@@ -63,8 +65,8 @@ namespace BBUnity.Actions
             Vector3 velocity = m_FireTransform.TransformDirection(localv);
             bullet.GetComponent<Rigidbody>().velocity = velocity;
 
-            //m_ShootingAudio.clip = m_FireClip;
-            //m_ShootingAudio.Play();
+            m_ShootingAudio.clip = m_FireClip;
+            m_ShootingAudio.Play();
 
             GameObject.FindWithTag(tankTag).GetComponent<mag>().use();
         }
