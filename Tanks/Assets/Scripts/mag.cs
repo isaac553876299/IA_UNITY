@@ -5,6 +5,7 @@ using UnityEngine;
 public class mag : MonoBehaviour
 {
     public int shells = 3;
+    public float time;
 
     public void use()
     {
@@ -19,7 +20,7 @@ public class mag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        time = Time.time;
     }
 
     // Update is called once per frame

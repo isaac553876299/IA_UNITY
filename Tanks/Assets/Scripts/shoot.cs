@@ -31,6 +31,7 @@ namespace BBUnity.Actions
         public override TaskStatus OnUpdate()
         {
             Fire();
+            GameObject.FindWithTag(tankTag).GetComponent<mag>().time = Time.time;
             return TaskStatus.COMPLETED;
         }
 

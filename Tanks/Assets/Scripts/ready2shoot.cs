@@ -20,7 +20,8 @@ namespace BBCore.Conditions
         {
             float maxDist = 30 * Mathf.Cos(0.79f);
             return ((GameObject.FindWithTag(tankTag).GetComponent<mag>().shells > 0)
-                &&(maxDist > Vector3.Distance(ft.position, t.position)));
+                && ((Time.time - GameObject.FindWithTag(tankTag).GetComponent<mag>().time) > 3)
+                && (maxDist > Vector3.Distance(ft.position, t.position)));
         }
     }
 }
