@@ -42,14 +42,26 @@ namespace BBUnity.Actions
 
         private void Fire()
         {
-            const float g = 10f;
             float v = m_LaunchForce;
-            float x = target.position.x;
-            float y = target.position.y;
-            float angle = Mathf.Atan(Mathf.Pow(v, 2) + Mathf.Sqrt(Mathf.Pow(v, 4) - g * (g * Mathf.Pow(x, 2) + 2 * y * Mathf.Pow(v, 2))) / (g * x));
+
+            float targetX = (target.position.x - m_FireTransform.position.x);
+            float targetZ = (target.position.z - m_FireTransform.position.z);
+            float targetY = (target.position.y - m_FireTransform.position.y);
+            Vector2 targetXZPos = new Vector2(targetX, targetZ);
+
+            float square = Mathf.Abs(Mathf.Pow(v, 4) - (Physics.gravity.y * (Physics.gravity.y * (Mathf.Pow(Mathf.Abs(targetXZPos.magnitude), 2)) + (2 * targetY * Mathf.Pow(v, 2)))));
+
+            float angle = (Mathf.Pow(v, 2) + Mathf.Sqrt(square)) / (Physics.gravity.y * Mathf.Abs(targetXZPos.magnitude));
+
+            float finalAngle = Mathf.Atan(Mathf.Abs(angle));
 
             GameObject bullet = GameObject.Instantiate(prefab, m_FireTransform.position, Quaternion.identity) as GameObject;
-            bullet.GetComponent<Rigidbody>().velocity = m_LaunchForce * m_FireTransform.forward;
+
+            float vz = Mathf.Cos(finalAngle) * v;
+            float vy = Mathf.Sin(finalAngle) * v;
+            Vector3 localv = new Vector3(0f, vy, vz);
+            Vector3 velocity = m_FireTransform.TransformDirection(localv);
+            bullet.GetComponent<Rigidbody>().velocity = velocity;
 
             //m_ShootingAudio.clip = m_FireClip;
             //m_ShootingAudio.Play();
