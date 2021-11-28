@@ -11,6 +11,8 @@ namespace BBUnity.Actions
 
         [InParam("tankBase")]
         public Vector3 tankBase;
+        [InParam("tag")]
+        public string tankTag;
 
         public override void OnStart()
         {
@@ -34,7 +36,7 @@ namespace BBUnity.Actions
         {
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
-                GameObject.FindWithTag("redTank").GetComponent<mag>().reload();
+                GameObject.FindWithTag(tankTag).GetComponent<mag>().reload();
 
                 return TaskStatus.COMPLETED;
             }

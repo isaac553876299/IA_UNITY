@@ -13,6 +13,8 @@ namespace BBUnity.Actions
         public GameObject prefab;
         [InParam("transform")]
         public Transform m_FireTransform;
+        [InParam("tag")]
+        public string tankTag;
 
         public AudioSource m_ShootingAudio;
         public AudioClip m_ChargingClip;
@@ -51,7 +53,7 @@ namespace BBUnity.Actions
             //m_ShootingAudio.clip = m_FireClip;
             //m_ShootingAudio.Play();
 
-            GameObject.FindWithTag("redTank").GetComponent<mag>().use();
+            GameObject.FindWithTag(tankTag).GetComponent<mag>().use();
         }
     }
 }
