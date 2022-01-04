@@ -1,0 +1,10 @@
+conda activate mlagents
+// conda env list
+cd Documents\GitHub\IA_UNITY\mlagents\Assets\Scripts
+mlagents-learn RollerAgent_config.yaml --run-id=RollerAgent
+// either --resume or --force or change id
+//play
+//new console
+tensorboard --logdir results --port 6006
+//chrome open localhost:6006
+//set .yaml summary_freq: 10000 or whatever
