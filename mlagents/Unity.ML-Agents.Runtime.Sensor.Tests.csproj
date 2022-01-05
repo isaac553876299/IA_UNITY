@@ -53,24 +53,24 @@
     <UnityVersion>2020.3.22f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\BufferSensorTest.cs" />
-    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\StackingSensorTests.cs" />
-    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\CompressionSpecTests.cs" />
-    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\RenderTextureSensorComponentTests.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\SimpleTestGridSensor.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\VectorSensorTests.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\CameraSensorTest.cs" />
-    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\BoxOverlapCheckerTests.cs" />
-    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\RayPerceptionSensorTests.cs" />
-    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\GridSensorTestUtils.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\FloatVisualSensorTests.cs" />
-    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\SensorShapeValidatorTests.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\CameraSensorComponentTest.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\SensorTestHelper.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\GridSensorTests.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\RenderTextureSensorTests.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\SensorUtilTests.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\ObservableAttributeTests.cs" />
+    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\BufferSensorTest.cs" />
+    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\StackingSensorTests.cs" />
+    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\CompressionSpecTests.cs" />
+    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\RenderTextureSensorComponentTests.cs" />
+    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\BoxOverlapCheckerTests.cs" />
+    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\RayPerceptionSensorTests.cs" />
+    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\GridSensorTestUtils.cs" />
+    <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\SensorShapeValidatorTests.cs" />
     <Compile Include="Packages\com.unity.ml-agents\Tests\Runtime\Sensor\ObservationWriterTests.cs" />
   </ItemGroup>
   <ItemGroup>

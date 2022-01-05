@@ -11,6 +11,13 @@ public class RollerAgent : Agent
     public Transform target;
     public float forceMultiplier = 10;
 
+    public Transform child;
+    public float wallMinDistance;
+    [SerializeField] private float fp;
+    [SerializeField] private float fm;
+    [SerializeField] private float rp;
+    [SerializeField] private float rm;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -18,18 +25,14 @@ public class RollerAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        if (this.transform.localPosition.y < 0)
-        {
-            // null momentum after fall
-            this.transform.localPosition = new Vector3(0, 0.5f, 0);
-            this.rigidBody.velocity = Vector3.zero;
-            this.rigidBody.angularVelocity = Vector3.zero;
-        }
+        this.transform.localPosition = new Vector3(10, 0.5f,-10);
+        this.rigidBody.velocity = Vector3.zero;
+        this.rigidBody.angularVelocity = Vector3.zero;
 
         target.transform.localPosition = new Vector3(
-            Random.value * 8 - 4,
+            Random.value * 2 + 10,
             0.5f,
-            Random.value * 8 - 4);
+            Random.value * 2 - 10);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -48,18 +51,63 @@ public class RollerAgent : Agent
         controlSignal.z = actionBuffers.ContinuousActions[1];
         rigidBody.AddForce(controlSignal * forceMultiplier);
 
-        float distanceToTarget = Vector3.Distance(
-            this.transform.localPosition, target.localPosition);
-
-        if (distanceToTarget < 1.42f)
+        if (this.transform.localPosition.y < 0)
         {
-            // reached target
+            // fell off
+            EndEpisode();
+        }
+
+        RaycastHit hitForward;
+        RaycastHit hitRight;
+        RaycastHit hitMinusForward;
+        RaycastHit hitMinusRight;
+        // RAYCAST FORWARD +
+        if (Physics.Raycast(child.transform.position, child.transform.forward, out hitForward, wallMinDistance))
+        {
+            if (hitForward.transform.tag == "wall")
+            {
+                fp = hitForward.distance;
+            }
+            Debug.DrawLine(child.transform.position, hitForward.transform.position, Color.black);
+        }
+        // RAYCAST RIGHT +
+        if (Physics.Raycast(child.transform.position, child.transform.right, out hitRight, wallMinDistance))
+        {
+            if (hitRight.transform.tag == "wall")
+            {
+                rp = hitRight.distance;
+            }
+            Debug.DrawLine(child.transform.position, hitRight.transform.position, Color.black);
+        }
+        // RAYCAST FORWARD -
+        if (Physics.Raycast(child.transform.position, -child.transform.forward, out hitMinusForward, wallMinDistance))
+        {
+            if (hitMinusForward.transform.tag == "wall")
+            {
+                fm = hitMinusForward.distance;
+            }
+            Debug.DrawLine(child.transform.position, hitMinusForward.transform.position, Color.black);
+        }
+        // RAYCAST RIGHT -
+        if (Physics.Raycast(child.transform.position, -child.transform.right, out hitMinusRight, wallMinDistance))
+        {
+            if (hitMinusRight.transform.tag == "wall")
+            {
+                rm = hitMinusRight.distance;
+            }
+            Debug.DrawLine(child.transform.position, hitMinusRight.transform.position, Color.black);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "target")
+        {
             SetReward(1.0f);
             EndEpisode();
         }
-        else if (this.transform.localPosition.y < 0)
+        if (collision.gameObject.tag == "wall")
         {
-            // fell off
             EndEpisode();
         }
     }
