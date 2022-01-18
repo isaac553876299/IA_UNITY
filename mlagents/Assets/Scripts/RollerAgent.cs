@@ -111,14 +111,14 @@ public class RollerAgent : Agent
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Wall")
+        if (collision.transform.tag == "wall")
         {
             isWall = true;
         }
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.transform.tag == "Wall")
+        if (collision.transform.tag == "wall")
         {
             isWall = true;
         }
