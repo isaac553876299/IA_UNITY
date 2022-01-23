@@ -17,12 +17,7 @@ public class RollerAgent : Agent
     Rigidbody rBody;
     Vector3 targetStartPos;
     Vector3 playerStartPos;
-    public float wallMinDistance = 1f;
     [SerializeField] private bool isWall = false;
-    [SerializeField] private float fp;
-    [SerializeField] private float fm;
-    [SerializeField] private float rp;
-    [SerializeField] private float rm;
 
     void Start()
     {
@@ -51,33 +46,24 @@ public class RollerAgent : Agent
             disableTriggers[i].GetComponent<BoxCollider>().isTrigger = true;
             disableTriggers.RemoveAt(i);
         }
-
-        transform.position = playerStartPos;
+	int random = Random.Range(0,possibleTargetSpawns.Length);
+        transform.position = possibleTargetSpawns[random].position;
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        // Target and Agent positions
         sensor.AddObservation(target.localPosition);
         sensor.AddObservation(this.transform.localPosition);
-        // Agent velocity
         sensor.AddObservation(rBody.velocity.x);
         sensor.AddObservation(rBody.velocity.z);
         sensor.AddObservation(isWall);
-        if (isWall)
-            isWall = false;
-        //RAYCAST INFO
-        //sensor.AddObservation(fp);
-        //sensor.AddObservation(rp);
-        //sensor.AddObservation(fm);
-        //sensor.AddObservation(rm);
+        isWall = false;
     }
 
     public float forceMultiplier = 10;
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        // Actions, size = 2
         Vector3 controlSignal = Vector3.zero;
         controlSignal.x = actionBuffers.ContinuousActions[0];
         controlSignal.z = actionBuffers.ContinuousActions[1];
@@ -98,8 +84,6 @@ public class RollerAgent : Agent
         if (distanceToTarget < 1.42f)
         {
             SetReward(1.0f);
-            //target.localPosition = possibleTargetSpawns[Random.RandomRange(0, possibleTargetSpawns.Length)].position;
-
             EndEpisode();
         }
         // Fell off platform
