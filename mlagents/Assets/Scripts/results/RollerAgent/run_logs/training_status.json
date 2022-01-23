@@ -2,28 +2,37 @@
     "RollerAgent": {
         "checkpoints": [
             {
-                "steps": 136307,
-                "file_path": "results\\RollerAgent\\RollerAgent\\RollerAgent-136307.onnx",
-                "reward": 4.0,
-                "creation_time": 1642949767.4409974,
+                "steps": 9027,
+                "file_path": "results\\RollerAgent\\RollerAgent\\RollerAgent-9027.onnx",
+                "reward": 1.449999988079071,
+                "creation_time": 1642976721.1244838,
                 "auxillary_file_paths": [
-                    "results\\RollerAgent\\RollerAgent\\RollerAgent-136307.pt"
+                    "results\\RollerAgent\\RollerAgent\\RollerAgent-9027.pt"
+                ]
+            },
+            {
+                "steps": 18927,
+                "file_path": "results\\RollerAgent\\RollerAgent\\RollerAgent-18927.onnx",
+                "reward": -0.5,
+                "creation_time": 1642976849.7695706,
+                "auxillary_file_paths": [
+                    "results\\RollerAgent\\RollerAgent\\RollerAgent-18927.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 136307,
+            "steps": 18927,
             "file_path": "results\\RollerAgent\\RollerAgent.onnx",
-            "reward": 4.0,
-            "creation_time": 1642949767.4409974,
+            "reward": -0.5,
+            "creation_time": 1642976849.7695706,
             "auxillary_file_paths": [
-                "results\\RollerAgent\\RollerAgent\\RollerAgent-136307.pt"
+                "results\\RollerAgent\\RollerAgent\\RollerAgent-18927.pt"
             ]
         }
     },
     "metadata": {
         "stats_format_version": "0.3.0",
         "mlagents_version": "0.27.0",
-        "torch_version": "1.7.1+cpu"
+        "torch_version": "1.7.1+cu110"
     }
 }

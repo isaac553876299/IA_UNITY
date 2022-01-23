@@ -18,7 +18,7 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 1.0
-    max_steps: 700000
+    max_steps: 500000
     time_horizon: 64
     summary_freq: 1000
 # epsilon: maybe random action

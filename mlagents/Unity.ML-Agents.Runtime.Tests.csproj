@@ -272,16 +272,16 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Abstractions">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Packages/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Packages/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Abstractions.TestingHelpers">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Packages/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Packages/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
  </Reference>
  <Reference Include="Google.Protobuf">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -629,19 +629,19 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Barracuda">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Msi/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Usuario/Documents/GitHub/IA_UNITY/mlagents/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
